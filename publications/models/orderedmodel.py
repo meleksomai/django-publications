@@ -27,7 +27,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import warnings
 from django.contrib.contenttypes.models import ContentType
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.db.models import Max, Min, F
 from django.utils.translation import ugettext as _
@@ -54,7 +54,7 @@ class OrderedModel(models.Model):
         )
 
     def get_ordering_queryset(self, qs=None):
-        qs = qs or self._default_manager.all()
+        qs = qs or self.__class__._default_manager.all()
         order_with_respect_to = self.order_with_respect_to
         if order_with_respect_to:
             value = self._get_order_with_respect_to()

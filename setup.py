@@ -6,10 +6,10 @@ from publications import __version__
 setup(
 	name='django-publications',
 	version=__version__,
-	author='Lucas Theis',
-	author_email='lucas@theis.io',
+	author='Melek Somai',
+	author_email='msomai@mcw.edu',
 	description='A Django app for managing scientific publications.',
-	url='https://github.com/lucastheis/django-publications',
+	url='https://github.com/meleksomai/django-publications',
 	packages=find_packages(),
 	include_package_data=True,
 	install_requires=('Django>=2.1.0', 'Pillow>=2.3.0'),
